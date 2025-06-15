@@ -6,7 +6,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # === 1. Загрузка данных ===
-conn = sqlite3.connect("C:/Python/ict_analysis.db")
+import os
+conn = sqlite3.connect(os.path.join(os.path.dirname(__file__), 'ict_analysis.db'))
 
 df_macro = pd.read_sql("SELECT * FROM macro_ict_data", conn)
 df_forecast = pd.read_sql("SELECT * FROM forecast_results", conn)
